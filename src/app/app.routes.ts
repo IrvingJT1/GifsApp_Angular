@@ -8,10 +8,16 @@ export const routes: Routes = [
     
         // con children se asegura mostrar el contenido de los componentes dentro de la ruta de dashboard que es el padre
         // ej ...dashboard/search o ...dashboard/trending
+
+        //con history/:query se muestra una forma de usar argumentos dinamicos al invocar una página
         children:[
             {
                 path: 'search',
                 loadComponent: () => import('./gifs/pages/search-page/search-page.component'),
+            },
+            {
+                path: 'history/:query',
+                loadComponent: () => import('./gifs/pages/gif-history/gif-history.component'),
             },
             {
                 path: 'trending',
